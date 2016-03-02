@@ -1,0 +1,129 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".Main"
+    android:id="@+id/webView_frame">
+
+    <WebView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/webView"
+        android:layout_gravity="left|top" />
+
+    <LinearLayout xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/adView_layout"
+        android:visibility="gone">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="MY_AD_UNIT_ID" />
+
+    </LinearLayout>
+
+    <RelativeLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/startup_image"
+        android:id="@+id/splash_layout"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:id="@+id/audio_media_player_remote"
+        android:layout_gravity="bottom"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/media_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/black_overlay">
+
+            <TextView
+                android:id="@+id/media_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="songName"
+                android:clickable="true"
+                android:onClick="openMediaPlayer"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="false"
+            android:id="@+id/media_buttons"
+            android:layout_below="@+id/media_header">
+
+            <ImageButton
+                android:id="@+id/media_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_previous"
+                android:background="@drawable/media_player_buttons"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <ImageButton
+                android:id="@+id/media_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_play"
+                android:background="@drawable/media_player_buttons"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <ImageButton
+                android:id="@+id/media_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_next"
+                android:background="@drawable/media_player_buttons"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/media_buttons"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="3dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/social_sharing"></include>
+
+</FrameLayout>

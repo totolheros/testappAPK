@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="localhost.appoverview">
+
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="localhost.appoverview.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.c2dm.intent.RECEIVE" android:category="applicationPackage" />
+    <uses-permission android:name="com.google.android.c2dm.SEND" />
+    <permission android:name="localhost.appoverview.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:hardwareAccelerated="true"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+
+        <activity
+            android:name=".Application"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="localhost.appoverview.Browser"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.BROWSER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="localhost.appoverview.CodeScan"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.CODESCAN" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="localhost.appoverview.AudioMediaPlayer"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.AUDIOMEDIAPLAYER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="localhost.appoverview.HTML5MediaPlayer"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.HTML5MediaPlayer" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+
+        <!--<uses-library-->
+            <!--android:name="com.google.android" />-->
+
+        <receiver
+                android:name="localhost.appoverview.util.GcmBroadcastReceiver"
+                android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="localhost.appoverview" />
+            </intent-filter>
+        </receiver>
+        <service android:name="localhost.appoverview.util.GcmIntentService" />
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+        <!-- FACEBOOK -->
+        <!-- FACEBOOK PROVIDER -->
+
+    </application>
+
+</manifest>

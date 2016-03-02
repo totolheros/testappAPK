@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"><![CDATA[Nathan]]></string>
+    <string name="url">http://localhost/fr/overview/</string>
+    <string name="load_message">Loading. Please wait&#8230;</string>
+    <string name="quit_message">Quit the application?</string>
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="no_internet_connection">You are working offline. Part of the content may not be visible.</string>
+    <string name="copy">Copy</string>
+    <string name="copied_success">Copied successfully</string>
+    <string name="qrcode_unsupported">Error while reading the QRCode</string>
+
+    <string name="sharing_error">Error while sharing on %1$s.</string>
+    <string name="sharing_text">Hi. I just found: %1$s in the %2$s app.</string>
+    <string name="sharing_audioplayer_text">I\'m listening to %1$s from %2$s on %3$s app.</string>
+    <string name="sharing_radioplayer_text">I\'m listening to %1$s on %2$s app.</string>
+
+    <string name="pdf_show_online_dialog_title">Show PDF</string>
+    <string name="pdf_show_online_dialog_question">You are trying to open a PDF file, but you don\'t have a PDF reader installed. Do you want to read the PDF file online with Google Drive (Requires Google account)?</string>
+    <string name="pdf_show_local_progress_title">Please wait</string>
+    <string name="pdf_show_local_progress_content">Downloading PDF&#8230;</string>
+
+    <string name="unknown">Unknown</string>
+    <string name="audio_player_stream_error">There was an error while reading the audio stream.</string>
+
+</resources>
